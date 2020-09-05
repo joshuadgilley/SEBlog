@@ -326,12 +326,41 @@
 				</div> -->
 				<div class="container">
 
-					<h3>Week 1</h3>
-					<p>Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante
-						lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo.
-						Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum
-						blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+					<h3>Initialization</h3>
+					<p>In contributing to Squid Ink, my first steps were to fork the repository and get it running. The
+						documentation on the repo for squid ink is plentiful but there were some workarounds that I had
+						to figure out in setting up my database. After establishing my cluster in MongoDB Atlas, I need
+						to figure out how to actually post a new user through the /api/users/login url. So after firing
+						up the server on localhost:5000 and the client on localhost:3000 I used postman to post a new
+						user to the database at localhost:5000/api/users/register as shown in the images below.</p>
+					<img src="/images/registerSchema.png" alt="registerSchema">
+					<p>As you can see in the lower half, my POST was well recieved. With a new hashed password and an
+						ObjectID, the new user "Josh Gilley" has been stored in the database show below.</p>
+					<img src="/images/newUserPost.png" alt="registerSchema">
+					<p>After establishing that my connection between the server and database I needed to make sure that
+						I could successfully login using localhost:5000/api/users/login. After doing a POST of name,
+						email, and password the response was a successful login with a 200 header as well as a Bearer
+						token shown below!</p>
+					<img src="/images/successfulLogin.png" alt="registerSchema">
+					<p>And there we have it! I've got the tool running on my machine and I've successfully connected to
+						database. Additionally, I learned that if you don't manually shut down the server and then try
+						the run the tool again you can run into issues being that the current structure is looking for a
+						specific port and if that port is already in use, you'll have issues. So I learned how to shut
+						down that port at the command line. Using the command "sudo kill -9 `sudo lsof -t -i:5000`", the
+						process id is locating for that specific port and then the kill command shuts it down! This can
+						be useful if you left a port open and you want to quickly shut it down.</p>
+					<p>Next steps are to understand how Docker is being used in the project so we can better establish
+						the bigger picture of what is to be accomplished with Squid Ink.</p>
 				</div>
+			</section>
+			<section id="threeNineEntry">
+				<!-- <div class="image main" data-position="center">
+					<img src="images/banner.jpg" alt="" />
+				</div> -->
+				<div class="container">
+
+					<h3>Docker Structure</h3>
+
 			</section>
 
 			<!-- Four -->
