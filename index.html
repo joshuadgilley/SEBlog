@@ -333,15 +333,15 @@
 						to figure out how to actually post a new user through the /api/users/login url. So after firing
 						up the server on localhost:5000 and the client on localhost:3000 I used postman to post a new
 						user to the database at localhost:5000/api/users/register as shown in the images below.</p>
-					<img src="images/registerSchema.png" alt="registerSchema">
+					<img src="/images/registerSchema.jpg" alt="registerSchema">
 					<p>As you can see in the lower half, my POST was well recieved. With a new hashed password and an
 						ObjectID, the new user "Josh Gilley" has been stored in the database show below.</p>
-					<img src="images/newUserPost.png" alt="registerSchema">
+					<img src="/images/newUserPost.jpg" alt="newUserPost">
 					<p>After establishing that my connection between the server and database I needed to make sure that
 						I could successfully login using localhost:5000/api/users/login. After doing a POST of name,
 						email, and password the response was a successful login with a 200 header as well as a Bearer
 						token shown below!</p>
-					<img src="images/successfulLogin.png" alt="registerSchema">
+					<img src="/images/successfulLogin.jpg" alt="successfulLogin">
 					<p>And there we have it! I've got the tool running on my machine and I've successfully connected to
 						database. Additionally, I learned that if you don't manually shut down the server and then try
 						the run the tool again you can run into issues being that the current structure is looking for a
