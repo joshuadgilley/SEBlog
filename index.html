@@ -459,17 +459,17 @@
 						to figure out how to actually post a new user through the /api/users/login url. So after firing
 						up the server on localhost:5000 and the client on localhost:3000 I used postman to post a new
 						user to the database at localhost:5000/api/users/register as shown in the images below.</p>
-					<span class=""><img style="border: grey solid 2px" src="images/registerSchema.jpg"
+					<span class=""><img style="border: grey solid 2px; width: 50em" src="images/registerSchema.jpg"
 							alt="registerSchema" /></span>
 					<p>As you can see in the lower half, my POST was well recieved. With a new hashed password and an
 						ObjectID, the new user "Josh Gilley" has been stored in the database show below.</p>
-					<span class=""><img style="border: grey solid 2px" src="images/newUserPost.jpg"
+					<span class=""><img style="border: grey solid 2px; width: 50em" src="images/newUserPost.jpg"
 							alt="newUserPost" /></span>
 					<p>After establishing that my connection between the server and database I needed to make sure that
 						I could successfully login using localhost:5000/api/users/login. After doing a POST of name,
 						email, and password the response was a successful login with a 200 header as well as a Bearer
 						token shown below!</p>
-					<span class=""><img style="border: grey solid 2px" src="images/successfulLogin.jpg"
+					<span class=""><img style="border: grey solid 2px; width: 50em" src="images/successfulLogin.jpg"
 							alt="successfulLogin" /></span>
 					<p>And there we have it! I've got the tool running on my machine and I've successfully connected to
 						database. Additionally, I learned that if you don't manually shut down the server and then try
@@ -488,7 +488,40 @@
 				</div> -->
 				<div class="container">
 
-					<h3>Docker Structure</h3>
+					<h3>Upload Files Addition</h3>
+
+					<p>The big picture for the "Upload Files" Tab is to be able to upload files to the database. The
+						addition I was hoping to make was to actually display the files that you have selected in the UI
+						and to make the Remove button functional in removing particular files from the UI. To accomplish
+						this I needed to go into the Upload.js component and actually establish a state variable to keep
+						track of the selected file's name, size, and obviously its index in the array.</p>
+					<span class=""><img style="border: grey solid 2px; width: 50em"
+							src="images/uploadFilesAdd/establishFileInfo.jpg" alt="registerSchema" /></span>
+					<p>After creating this array I created a map for file in the fileInfo array to display that info on
+						the screen. After displaying the file's name and size we needed to add functionality to the
+						remove button which actually removes the file from the array and through that change of state
+						removes it from the UI. This is shown in the screenshot below where you see an addition to the
+						onClick function in the remove button that allows this functionality.</p>
+					<span class=""><img style="border: grey solid 2px; width: 50em"
+							src="images/uploadFilesAdd/mapCreate.jpg" alt="newUserPost" /></span>
+					<p>Awesome! Everythings working. Now to show it in the browser. Shown in the screenshot below are a
+						sequence of added files shown on the screen. There are some necessary styling fixes to be made
+						along with some clarification as to whether or not we should upload a cluster of "added" files
+						all at once or one by one like they are currently. Also if the remove button should not only
+						remove the files from the UI but also from the database or if this will be a function of the
+						"See My Files" tab.</p>
+					<span class=""><img style="border: grey solid 2px; width: 50em"
+							src="images/uploadFilesAdd/uploadsShown.jpg" alt="successfulLogin" /></span>
+					<p>Finally, we've also got the remove button working which is shown below. I removed one of the
+						items from the files that I previously added.</p>
+					<span class=""><img style="border: grey solid 2px; width: 50em"
+							src="images/uploadFilesAdd/uploadsRemoved.jpg" alt="successfulLogin" /></span>
+					<p>I'm still back and forth with the creator of this tool to continue to work out the situation with
+						Docker. On top of that, next steps are to work on the "See My Files" section to actually display
+						the files on the screen that are currently in the database. Also, we want to connect the
+						database ObjectID of the user/password to the specific ObjectID of the files in order to create
+						a connection between user and their files.</p>
+				</div>
 
 			</section>
 
