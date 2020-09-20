@@ -565,24 +565,21 @@
 						specific dependencies within certain containers, we can just worry about redockerizing later
 						once we solve some more of the hard issues with the web service. </p>
 
-					<p>What seems more import is coming up with a way to save the files to the database, but then access
-						the files in the browser under the see my files tab. This is something that is done all the time
+					<p>What seems to be more import is coming up with a way to save the files to the database, but then
+						being able to access
+						the files in the browser under the "see my files" tab. This is something that is done all the
+						time
 						using a REST API. The problem is that we are entering an infrastructure that was built before we
-						were involved so we are just getting acquainted with the project. The structure for the REST API
+						were involved, so we are just getting acquainted with the project. The structure for the REST
+						API
 						actually exists so much as the POSTs go. We can use Postman to see that this is actually the
 						case and it is working appropriately. However, when we try to run a GET on the /files page, we
 						run into a particularly tricky error: "this.db.collection is not a function". Richard and I did
 						extensive research trying to discover the cause of the bug, from changing the version 3.0 of
-						MongoDB back to 2.2.33 which didn't work to many other things. We are now looking at the code
+						MongoDB back to 2.2.33 to deleting and re-installing MongoDB entirely. We are now looking at the
+						code
 						and thinking that the issue has something to do with the line "storage = gfs storage in the
 						server/api/ user.js component because that seems to be the db.collections issue is occuring.</p>
-
-					<p>Awesome! Everythings working. Now to show it in the browser. Shown in the screenshot below are a
-						sequence of added files shown on the screen. There are some necessary styling fixes to be made
-						along with some clarification as to whether or not we should upload a cluster of "added" files
-						all at once or one by one like they are currently. Also if the remove button should not only
-						remove the files from the UI but also from the database or if this will be a function of the
-						"See My Files" tab.</p>
 
 					<p>Basically, we are jumping into the project at a point where the previous deveoper was having a
 						hard time figuring it out as well. This may end up being a restucturing of how we actually store
