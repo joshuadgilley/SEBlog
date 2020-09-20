@@ -550,6 +550,52 @@
 
 			</section>
 
+			<section id="threeNineEntry">
+				<!-- <div class="image main" data-position="center">
+					<img src="images/banner.jpg" alt="" />
+				</div> -->
+				<div class="container">
+
+					<h3>Struggling with Docker & REST API</h3>
+
+					<p>This past week was one of my more difficult experiences. Richard and I work throughout the week
+						trying to understand how we could rethink the dockerization of Squid Ink, or if we could fix the
+						error that was happening when trying to compose. Since we could not figure out how to get rid of
+						this error, we established that since the dockerization of the app is important to establish
+						specific dependencies within certain containers, we can just worry about redockerizing later
+						once we solve some more of the hard issues with the web service. </p>
+
+					<p>What seems more import is coming up with a way to save the files to the database, but then access
+						the files in the browser under the see my files tab. This is something that is done all the time
+						using a REST API. The problem is that we are entering an infrastructure that was built before we
+						were involved so we are just getting acquainted with the project. The structure for the REST API
+						actually exists so much as the POSTs go. We can use Postman to see that this is actually the
+						case and it is working appropriately. However, when we try to run a GET on the /files page, we
+						run into a particularly tricky error: "this.db.collection is not a function". Richard and I did
+						extensive research trying to discover the cause of the bug, from changing the version 3.0 of
+						MongoDB back to 2.2.33 which didn't work to many other things. We are now looking at the code
+						and thinking that the issue has something to do with the line "storage = gfs storage in the
+						server/api/ user.js component because that seems to be the db.collections issue is occuring.</p>
+
+					<p>Awesome! Everythings working. Now to show it in the browser. Shown in the screenshot below are a
+						sequence of added files shown on the screen. There are some necessary styling fixes to be made
+						along with some clarification as to whether or not we should upload a cluster of "added" files
+						all at once or one by one like they are currently. Also if the remove button should not only
+						remove the files from the UI but also from the database or if this will be a function of the
+						"See My Files" tab.</p>
+
+					<p>Basically, we are jumping into the project at a point where the previous deveoper was having a
+						hard time figuring it out as well. This may end up being a restucturing of how we actually store
+						and interact with the database so that we don't run into this issue. We may have to work
+						backwards before we can work forwards on this.</p>
+
+					<p>Where the problem is now, I created a stack overflow question hoping to address the issue soon.
+						But if I don't here back soon, we may move on to rebuild some of the posting and getting of the
+						files, even though it is partially working.</p>
+				</div>
+
+			</section>
+
 			<!-- Four -->
 			<!-- <section id="four">
 				<div class="container">
