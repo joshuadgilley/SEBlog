@@ -662,6 +662,34 @@
 
 			</section>
 
+			<section id="threeNineEntry">
+				<!-- <div class="image main" data-position="center">
+					<img src="images/banner.jpg" alt="" />
+				</div> -->
+				<div class="container">
+
+					<h3>Success! See My Files Now Functional</h3>
+
+					<p>This past week we had some good new happen. We got over the hill of the collection.db error and
+						we were able to rework it. By removing the mongoose.connect, and instituting the
+						MongoClient.connect we are able to pass in the client as an argument and call client.db which
+						works for the newer version of MongoDB. The error we were running into before was because the
+						code was operatable for an older version. </p>
+
+					<p>Now that we got that running, the second step was to establish the ObjectID for each user, in
+						every file that they post. So if Bud's ID is "123", then "123" will be stored in metadata for
+						each file. We were able to implement this so now with we do the fetch to api/users/files we get
+						a display of json formatted files, relevant to the user that is connected to them.</p>
+
+					<p>All in all, we've got See My Files working and now the entire thing is redesigned with Material
+						UI.</p>
+
+					<p>Next steps are going to be accessing the list of files in "See My Files" when you are in the
+						Squid container and you want to "Choose Files". </p>
+				</div>
+
+			</section>
+
 			<!-- Four -->
 			<!-- <section id="four">
 				<div class="container">
