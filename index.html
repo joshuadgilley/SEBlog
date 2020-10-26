@@ -886,46 +886,47 @@
 				</div> -->
 				<div class="container">
 
-					<h3>Facing Docker</h3>
+					<h3>Dockerized Servlet, Feature Flow, and Cirdles Web UI</h3>
 
-					<p>After this past weeks meeting, Richard and I were very tempted to start from scratch. However, we
-						realized that we actually now understand the project and all of its querks more than we were
-						giving ourselves credit. The first few weeks of tackling this project were mostly about
-						understanding the code that was there and figuring out how we could contribute. On monday, we
-						spent a while figuring out if we started from scratch where we would be. We would need to start
-						rebuilding what we already had in some sense from the ground up only to possibly reach the end
-						of the Tutorial only to have produced what was already there. Instead, we want to start tackling
-						the bigger issues which is how to fire up a container in a user session that contains Squids
-						Core in a controlled virtual environment or container. We've really got a grip on the code and
-						how all the pieces work, it wouldn't make sense to start from scratch.</p>
+					<p>This past week was spent figuring out how to developer a small servlet that saves a file to a
+						folder. This servlet is displayed in the browser using tomcat and lives inside of a docker
+						container where you can save files. Along with this task was to begin to figure out how the
+						other Cirdles projects are implemented in Cirdles Web UI. While I worked on the dockerized
+						tomcat servlet, Richard spent time understanding how we can go ahead and connect the landing
+						page of Squid Ink into Cirdles Web UI, which is the end goal. </p>
 
-					<p>This past week we were able to create this virtual environment successfully using docker. Simply
-						put we created a simple java executable as a placeholder for the Squid Core dradle project. We
-						then created a dockerfile to describe the environment for this java executable. It is to use
-						Java 1.8. After firing up Squid Ink's server and client, you will login and then navigate over
-						to the squid page. Fill out the form and click the button at the bottom. You will be greeted
-						with some new text in an h5 tag. This text is produced from the java executable that is living
-						in the container that was run at the moment you hit "Squid". This is a major step in the right
-						direction, where now we can start to work towards replacing this simple .jar with the actual
-						gradle build that Squid Core is structed with. </h5>
-					</p>
+					<p>Displayed below is a diagram of what has been accomplished and what the next steps are and how
+						they work together.</p>
 
-					<p>All in all, we now have a Java program running within our main project that is operating in a
-						virtual container via Docker. The next steps would include now replacing the .jar placeholder
-						but also reforming the files that are stored in the MongoDB database and passing them into the
-						container to be handled. Luckily, Richard has already made strides towards this. One of the big
-						things to overcome in starting this project was seeing the good, the bad, and the ugly in the
-						code. Not so much that the previous developer did anything wrong, but there was tools such as
-						GridFS and Multer that made the process a little more complicated. After getting rid of these
-						and going a different direction we are now able to get the file in its natural form bag on the
-						user's environment. Now we want to pass the files and other arguments into the container to be
-						used in the parsing sequence of Squid Core. The point is now we have a path forward, whereas
-						before we were banging our heads on the screen trying to find some semblance of a direction to
-						take. We now, with the approval of Dr. Bowring hopefully, have that direction. </p>
+					<span class=""><img style="border: grey solid 2px; width: 50em" src="images/featureFlow.png"
+							alt="featureFlow" /></span>
 
+					<p>The tomcat container where the servlet lives is a placeholder for what will be Squid Ink. All of
+						the different core algorithms and interactive UI will exist within this container. This is a
+						large project, but we have to start somewhere. One of the features of this container is the
+						ability to save and use files within a container. So the first step is to create this
+						functionality with our simple file upload. We accomplished this through first creating our
+						simple file uploader servlet and to export this project with and index.html as a WAR file. Next
+						we wanted to use the dockerized Tomcat container to create an endpoint for the WAR file. Now
+						when you go to the specific endpoint from the Tomcat server, you have access to the file
+						uploader. Now we want to give a new path to the servlet that represents a directory inside the
+						container for the files to be saved. We had success with this, but not only that, we started up
+						the file uploader on 80:8080 and 81:8080 which were two separate containers running on two
+						separate ports. We saved different files in the different containers and bashed into the
+						containers to show that those files were indeed in there. This proves that we can have mutually
+						exlusive sessions happening between users, where every user can have their own unique port to
+						live on while interacting with Squid Ink. </p>
+
+					<p>With Richard's implementation of Squid Ink boilerplate in the Cirdles Web UI and my dockerized
+						Tomcat servlet, we have the pieces to this finished web service. Now I want to use the dockerize
+						Tomcat servlet to fire up two separate containers on two seperate ports, upload and save files
+						in the separate containers to show that multiple containers can run. This is another implemental
+						part of the service we are trying to survive. </p>
 				</div>
 
 			</section>
+
+
 
 			<!-- Four -->
 			<!-- <section id="four">
