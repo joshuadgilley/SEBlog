@@ -44,7 +44,7 @@
 				<li><a href="#seventeen" class="active">HW16: Chapter 20</a></li>
 				<li><a href="#eighteen" class="active">HW17: Team Progress 1</a></li>
 				<li><a href="#nineteen" class="active">HW18: Chapter 21 and Chapter 22</a></li>
-
+				<li><a href="#nineteen" class="active">HW19: Chapter 23</a></li>
 
 
 
@@ -793,6 +793,18 @@
 				</div>
 			</section>
 
+
+			<!-- Twenty -->
+			<section id="twenty">
+				<div class="container">
+					<h3>HW19: Chapter 23</h3>
+					<h4><b>23.6</b></h4>
+					<p style="text-indent: 40px;">
+
+					</p>
+				</div>
+			</section>
+
 			<!-- 399 -->
 			<section id="threeNineNine">
 				<!-- <div class="image main" data-position="center">
@@ -998,6 +1010,30 @@
 						Tomcat servlet to fire up two separate containers on two seperate ports, upload and save files
 						in the separate containers to show that multiple containers can run. This is another implemental
 						part of the service we are trying to survive. </p>
+				</div>
+
+			</section>
+
+			<section id="threeNineEntry">
+				<!-- <div class="image main" data-position="center">
+					<img src="images/banner.jpg" alt="" />
+				</div> -->
+				<div class="container">
+
+					<h3>Integration to Cirdles Web UI</h3>
+
+					<p>A lot of progress has been made since the last post. The architecture mentioned in the previous
+						post has been fruitful. After creating a simple java servlet acting as a placeholder for Squid
+						Ink, we were able to dockerize the servlet into a container that has java 1.8 and tomcat 9. Not
+						only this, but being that the servlet we created was a file uploader, we were able to prove that
+						we can spawn to containers on two separate ports and save different files inside of the
+						container. This was a major step. </p>
+
+					<p>After getting this to fully operate, we had to fully reconfigure the mongodb database to a more
+						local mysql database. After getting this to work, we started to transfer our UI directly into
+						the Cirdles Web UI, being that that is the end goal. Now that we've got that, we wanted to fire
+						up the container containing the servlet file uploader upon logging into your squid ink. We
+						actually have accomplished this as well. The past few weeks were very productive.</p>
 				</div>
 
 			</section>
