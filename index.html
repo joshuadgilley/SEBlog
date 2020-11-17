@@ -42,10 +42,11 @@
 				<li><a href="#fifteen" class="active">HW14: Chapter 18</a></li>
 				<li><a href="#sixteen" class="active">HW15: Chapter 19</a></li>
 				<li><a href="#seventeen" class="active">HW16: Chapter 20</a></li>
-				<li><a href="#eighteen" class="active">HW17: Team Progress 1</a></li>
+				<li><a href="#eighteen" class="active">HW17: Team Progress I</a></li>
 				<li><a href="#nineteen" class="active">HW18: Chapter 21 and Chapter 22</a></li>
 				<li><a href="#twenty" class="active">HW19: Chapter 23</a></li>
-
+				<li><a href="#twentyOne" class="active">HW20: Team Progress II</a></li>
+				<li><a href="#twentyTwo" class="active">HW21: Chapter 24</a></li>
 
 
 
@@ -801,6 +802,63 @@
 					<h4 style="text-indent: 40px;">23.6</h4>
 					<span class=""><img style="border: grey solid 2px; width: 50em" src="images/236.png"
 							alt="registerSchema" /></span>
+				</div>
+			</section>
+
+
+			<!-- TwentyOne -->
+			<section id="twentyOne">
+				<div class="container">
+					<h3>HW20: Team Progress II</h3>
+					<p style="text-indent: 40px;">
+						We faced several hurdles during this phase of the project. Obviously the most glaring was the
+						need to completely refactor our code after realizing we were doing some things incorrectly.
+						However, we would have needed to refactor a bit anyway to enable our script to handle multiple
+						drivers. Before the refactor, our program had some info hard coded that while functional,
+						would’ve had to have been duplicated and adjusted should the user want to add additional test
+						cases. Now, our program has nothing about any test case hard coded anywhere, and our script can
+						handle as many drivers/test cases as the user could write without any adjustment. This was just
+						one of the hurdles we faced while tackling this deliverable though.
+						One of our other issues was simply finding methods we could use to test. Moodle is a somewhat
+						large project with some very complex functions, and it took us several hours of looking to find
+						enough methods to use. We had a lot of success finding methods in a php file called weblib.php,
+						but we thought it to be a cheap move to use that class more than necessary. Then again, many
+						methods in weblib.php had to do with converting html elements into entities which made for
+						tricky testing, so we ultimately decided to move on. This was likely for the best as the methods
+						we found work very well for our purposes.
+						The final issue we had was trying to figure out how to call our script from the correct place
+						and having it run. This turned out to be a simple fix. Now we have a bash script in the scripts
+						folder that runs all of the scripts in that folder, including out runAllTests script. Having
+						remedied that final error, we feel that we have adequately completed deliverable 4 and we are
+						confident in our ability to accomplish everything for deliverable 5.
+					</p>
+					<p style="text-indent: 40px;">
+						This deliverable was particularly difficult for the team. We thought that most of the work would
+						be done after deliverable 3, that we would just need to make some minor adjustments to the
+						script and the driver and then we could easily write the other 4 drivers and 20 test cases. That
+						clearly was not the case as we had to not only refactor our code for 2 reasons, but also that we
+						had to spend hours on a scavenger hunt for a method we might be able to test. It took a lot of
+						work and patience to get everything done, yet we believe we managed to do so with some elegance
+						and some class. We are happy with our project considering that at this point we believe we’ve
+						done everything we need to and it’s working as specified. Nonetheless, we’ve become weary in our
+						experiences with open source projects, and we are fully prepared for whatever curveballs
+						deliverable 5 has in store for us.
+					</p>
+				</div>
+			</section>
+
+			<!-- TwentyTwo -->
+			<section id="twentyTwo">
+				<div class="container">
+					<h3>HW21: Chapter 24</h3>
+					<h4><b>24.6</b></h4>
+					<p style="text-indent: 40px;">
+						Program inspections certianly serve their purpose which is to validate a program and verify that
+						it is functioning properly. The peer-reviewed process has a group of humans looking line by line
+						at the code to make sure that there are no major issues in the early stages of development. One
+						of the issues with this process is that the groups of humans go over code, they are looking for
+						common issues so it may be likely that these processes miss the more unique and hidden bugs.
+					</p>
 				</div>
 			</section>
 
